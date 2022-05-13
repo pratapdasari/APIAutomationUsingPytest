@@ -1,0 +1,1 @@
+[{'custom': False, 'name': 'Configuration', 'problemTypeId': 2}, {'custom': False, 'name': 'Downloads', 'problemTypeId': 3}, {'custom': False, 'name': 'General', 'problemTypeId': 6}, {'custom': False, 'name': 'Manuals', 'problemTypeId': 5}, {'custom': False, 'name': 'Network', 'problemTypeId': 4}]
