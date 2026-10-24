@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratap Dasari | Resume</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 9mm 10mm;
+    }
+
+    :root {
+      --navy: #123d63;
+      --navy-2: #1f517f;
+      --blue: #2d6ea8;
+      --steel: #5d7085;
+      --text: #1c232c;
+      --muted: #5f6f7d;
+      --line: #dfe7ee;
+      --panel: #f4f8fb;
+      --white: #ffffff;
+      --soft: #edf3f9;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #edf2f7;
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.45;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .resume {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--white);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: white;
+      padding: 26px 32px 18px;
+      position: relative;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.55), rgba(255,255,255,0.15));
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 31px;
+      letter-spacing: 0.6px;
+      font-weight: 700;
+    }
+
+    .headline {
+      margin-top: 7px;
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ebf3fe;
+      font-weight: 600;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #eff6ff;
+      white-space: nowrap;
+      padding-top: 3px;
+    }
+
+    .contact a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 2.3fr 1fr;
+      min-height: 240mm;
+    }
+
+    .main {
+      padding: 24px 22px 14px 30px;
+    }
+
+    .sidebar {
+      background: var(--panel);
+      padding: 24px 20px 14px 18px;
+      border-left: 1px solid var(--line);
+    }
+
+    .section {
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+
+    .section-title {
+      margin: 0 0 9px;
+      padding-bottom: 7px;
+      border-bottom: 2px solid var(--navy);
+      font-size: 12.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .summary {
+      margin: 0;
+      font-size: 12.5px;
+      text-align: justify;
+      color: var(--text);
+    }
+
+    .job {
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 3px;
+    }
+
+    .job-role {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .date {
+      font-size: 11.2px;
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .company {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .project {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--steel);
+      margin-bottom: 6px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li {
+      font-size: 12.2px;
+      line-height: 1.55;
+      margin-bottom: 5px;
+    }
+
+    .skills-list, .achievement-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .skills-list li, .achievement-list li {
+      font-size: 12.3px;
+      margin-bottom: 7px;
+      line-height: 1.5;
+    }
+
+    .skill-key {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .education {
+      margin: 0;
+      font-size: 12.5px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .resume {
+        width: 100%;
+        min-height: auto;
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <header class="header">
+      <div class="header-row">
+        <div>
+          <h1>PRATAP DASARI</h1>
+          <div class="headline">QA Automation Lead | SDET | Test Automation Specialist</div>
+        </div>
+        <div class="contact">
+          +91-9741207600<br />
+          dasariprtap@gmail.com<br />
+          <a href="https://www.linkedin.com/in/PratapDasari">linkedin.com/in/PratapDasari</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <main class="main">
+        <section class="section">
+          <h2 class="section-title">Objective</h2>
+          <p class="summary">
+            Results-driven QA Automation Lead with 19+ years of experience in software testing, test automation,
+            and quality assurance across enterprise applications. Skilled in Python, Java, TypeScript, Selenium,
+            Playwright, WebDriverIO, RestAssured, Cucumber, Pytest, and Agile methodologies. Proven track record in
+            designing and implementing automation frameworks, leading QA teams, mentoring engineers, and improving
+            product quality through efficient testing strategies. Seeking to contribute expertise in automation,
+            process optimization, and quality leadership in a dynamic and growth-oriented technology environment.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Professional Experience</h2>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-role">Tech Lead</div>
+              <div class="date">2026 – Till Date</div>
+            </div>
+            <div class="company">Client: IGEL | Innominds Software Pvt. Ltd.</div>
+            <div class="project">Project: IGEL Apps</div>
+            <ul>
+              <li>Worked on test automation for IGEL browser applications across Chromium, Firefox, and Microsoft Edge.</li>
+              <li>Developed and executed automated test cases using Python and Pytest with parameterization for cross-browser validation.</li>
+              <li>Performed GUI testing using Linux commands without Selenium or Playwright to validate application functionality, browser compatibility, and system reliability.</li>
+              <li>Used GitHub Copilot to automate repetitive Python-based test scripting tasks and accelerate delivery.</li>
+              <li>Executed pytest-based automation with Allure reporting for structured verification and traceability.</li>
+              <li>Led a 5-member QA team and supported validation for IGEL’s read-only Linux OS-based environment.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-role">Tech Lead</div>
+              <div class="date">2024 – 2026</div>
+            </div>
+            <div class="company">Client: AutoZone | Innominds Software Pvt. Ltd.</div>
+            <div class="project">Project: AUTOZONE LDE</div>
+            <ul>
+              <li>Automated inbound, putaway, outbound, and replenishment processes using Python and Pytest framework.</li>
+              <li>Designed complex test scenarios for distribution center workflows to validate operational readiness and accuracy.</li>
+              <li>Led the QA team with 5 members and coordinated with project owners, architects, and development teams to refine requirements.</li>
+              <li>Worked closely with stakeholders to validate end-to-end business flows and ensure quality across warehouse processes.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-role">Tech Lead</div>
+              <div class="date">2023 – 2024</div>
+            </div>
+            <div class="company">Client: Rfxcel | Innominds Software Pvt. Ltd.</div>
+            <div class="project">Project: RFXCEL RTS 7.0</div>
+            <ul>
+              <li>Developed a RestAssured framework from scratch using Java, RestAssured, Cucumber, and Allure Reporting.</li>
+              <li>Built a Playwright framework using Playwright, TypeScript, Cucumber, POM, and Allure Reporting.</li>
+              <li>Trained QA team members on both RestAssured and Playwright frameworks to strengthen automation capability.</li>
+              <li>Performed a POC on Xray and integrated it with Jira from scratch for streamlined test case management.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-role">QA Lead</div>
+              <div class="date">2007 – 2023</div>
+            </div>
+            <div class="company">Micro Focus (Formerly Novell Software Pvt. Ltd.)</div>
+            <div class="project">Projects: MFSD | ZAM | ZENWORKS INSTALL | BOE</div>
+            <ul>
+              <li>Developed a WebDriverIO test framework from scratch using TypeScript, Cucumber, POM, and Chai.</li>
+              <li>Automated end-to-end test cases using Protractor with TypeScript and Jasmine for ZSD 8.2 and 8.3 releases.</li>
+              <li>Automated end-to-end validations using Java and Selenium with the Phoenix framework.</li>
+              <li>Developed REST API automation framework using Python, Requests, and Pytest.</li>
+              <li>Led a small automation team and performed customer issue impact analysis for prioritized resolution.</li>
+              <li>Conducted POCs on different automation tools and recommended the best-fit frameworks based on project needs.</li>
+              <li>Facilitated Agile ceremonies including sprint planning, daily scrum, sprint review, and retrospective meetings.</li>
+              <li>Prepared test scenarios, test beds, traceability matrices, and release validation documentation.</li>
+              <li>Performed REST API testing using Postman and security scanning using Nessus.</li>
+              <li>Worked on database platforms including Sybase, MSSQL, Oracle, and PostgreSQL for test validation and schema analysis.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <section class="section">
+          <h2 class="section-title">Skills</h2>
+          <ul class="skills-list">
+            <li><span class="skill-key">Languages:</span> Python, Java, TypeScript</li>
+            <li><span class="skill-key">Automation:</span> Selenium, Protractor, WebDriverIO, Playwright, RestAssured, Postman</li>
+            <li><span class="skill-key">Frameworks:</span> Jasmine, Cucumber, Pytest, POM</li>
+            <li><span class="skill-key">RDBMS:</span> MSSQL, Oracle, Sybase, PostgreSQL</li>
+            <li><span class="skill-key">SCM:</span> Git</li>
+            <li><span class="skill-key">SDLC:</span> Agile Model</li>
+            <li><span class="skill-key">Security:</span> Nessus Scan</li>
+            <li><span class="skill-key">Management:</span> Jira, Xray, Bugzilla, Octane</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Education</h2>
+          <p class="education">
+            M.Tech | NIT Warangal
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Key Strengths</h2>
+          <ul class="skills-list">
+            <li>Test Strategy & Automation Architecture</li>
+            <li>Framework Design from Scratch</li>
+            <li>Cross-Browser & API Automation</li>
+            <li>Agile QA Leadership</li>
+            <li>Regression & Release Validation</li>
+            <li>Team Coaching & Knowledge Transfer</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Activities & Achievements</h2>
+          <ul class="achievement-list">
+            <li>Certified Scrum Master</li>
+            <li>Five times Manager-to-Employee Recognition Award</li>
+            <li>Winner in Techno Quest Quiz</li>
+            <li>Six times “Note of Excellence” awards</li>
+            <li>Attended four-day training in Application Security Testing / Penetration Testing</li>
+            <li>Completed AWS Solution Architect Associate certification training</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
